@@ -1,0 +1,66 @@
+[
+  {
+    "id": "e1",
+    "type": "run.started",
+    "timestamp": 0,
+    "payload": { "runId": "run-1" }
+  },
+  {
+    "id": "t1-start",
+    "type": "task.started",
+    "timestamp": 200,
+    "payload": { "runId": "run-1", "taskId": "task-1" }
+  },
+  {
+    "id": "t1-partial-1",
+    "type": "task.partial",
+    "timestamp": 600,
+    "payload": {
+      "runId": "run-1",
+      "taskId": "task-1",
+      "chunk": { "id": "p1", "taskId": "task-1", "content": "Fetching market data...", "timestamp": 600 }
+    }
+  },
+  {
+    "id": "t1-success",
+    "type": "task.succeeded",
+    "timestamp": 1200,
+    "payload": { "runId": "run-1", "taskId": "task-1" }
+  },
+  {
+    "id": "t2-start",
+    "type": "task.started",
+    "timestamp": 1400,
+    "payload": { "runId": "run-1", "taskId": "task-2" }
+  },
+  {
+    "id": "t2-fail",
+    "type": "task.failed",
+    "timestamp": 2200,
+    "payload": { "runId": "run-1", "taskId": "task-2", "error": "timeout" }
+  },
+  {
+    "id": "t2-retry",
+    "type": "task.retry_scheduled",
+    "timestamp": 3200,
+    "payload": { "runId": "run-1", "taskId": "task-2", "attempt": 1 }
+  },
+  {
+    "id": "t2-retry-attempt",
+    "type": "task.retry_attempt",
+    "timestamp": 4200,
+    "payload": { "runId": "run-1", "taskId": "task-2" }
+  },
+  {
+    "id": "t2-success",
+    "type": "task.succeeded",
+    "timestamp": 5200,
+    "payload": { "runId": "run-1", "taskId": "task-2" }
+  },
+  {
+    "id": "final",
+    "type": "final.synthesized",
+    "timestamp": 6200,
+    "payload": { "runId": "run-1", "finalOutput": "Synthesis complete: target allocation adjusted." }
+  }
+]

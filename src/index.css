@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+.glass-card {
+  background: rgba(20,20,22,0.45);
+  backdrop-filter: blur(6px) saturate(120%);
+  border: 1px solid rgba(36,36,38,0.5);
+}
+
+.typing {
+  position: relative;
+}
+.typing::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.8);
+  display: inline-block;
+  margin-left: 6px;
+  animation: blink 1s steps(2, start) infinite;
+}
+@keyframes blink { to { opacity: 0 } }
